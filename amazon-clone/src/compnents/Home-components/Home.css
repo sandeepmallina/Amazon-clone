@@ -1,0 +1,123 @@
+.home {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+}
+.home_image {
+  width: 100%;
+  z-index: -1;
+  margin-bottom: -150px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+.home_row {
+  display: flex;
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.product_banner {
+  margin-top: 10px;
+  padding: 0 15px 0 15px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-rows: repeat(3, minmax(100px, 1fr));
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 3rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* .product_image {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+} */
+.banner1 {
+  /* background-image: url("https://www.pngitem.com/pimgs/m/1-12280_amazon-echo-logo-png-transparent-png.png"); */
+  grid-column: span 2 / auto;
+  grid-row: span 2 / auto;
+  background-color: rgb(247, 247, 247);
+  background-image: url("https://www.pngitem.com/pimgs/m/1-12280_amazon-echo-logo-png-transparent-png.png");
+  /* background-position: center; */
+  background-size: contain;
+}
+.banner2 {
+  grid-column: span 2 / auto;
+  grid-row: span 2 / auto;
+  background-color: rgb(247, 247, 247);
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/800px-Amazon_Web_Services_Logo.svg.png");
+  /* background-position: center; */
+  background-size: contain;
+}
+.banner3 {
+  background-color: rgb(247, 247, 247);
+  background-image: url("https://m.media-amazon.com/images/G/01/omaha/images/merch/2019/Banyan/Email/f3vx-1400-AmazonFresh_Logo.png");
+  /* background-position: center; */
+  background-size: contain;
+}
+.banner4 {
+  background-color: white;
+  background-image: url("https://mms.businesswire.com/media/20201117005429/en/839269/5/Amazon_Pharmacy_logo.jpg");
+  /* background-position: center; */
+  background-size: contain;
+}
+.banner5 {
+  background-color: rgb(247, 247, 247);
+  background-image: url("https://zeevector.com/wp-content/uploads/LOGO/amazon-prime-logo-PNG-HD.png");
+  /* background-position: center; */
+  background-size: contain;
+}
+.banner6 {
+  background-color: rgb(247, 247, 247);
+  background-image: url("https://cdn2.downdetector.com/static/uploads/logo/amazonmusiclogo_CG06xih.png");
+  /* background-position: center; */
+  background-size: contain;
+}
+.banner4,
+.banner3,
+.banner5,
+.banner6 {
+  grid-row: span 2 / auto;
+}
+/* .product_image {
+  border-radius: 5px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.product_col1,
+.product_col2 {
+  flex-grow: 2;
+  margin: 5px;
+}
+.product_row1,
+.product_row2 {
+  display: flex;
+  margin: 2%;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.product_imagerow1,
+.product_imagerow2 {
+  border-radius: 5px;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+} */
