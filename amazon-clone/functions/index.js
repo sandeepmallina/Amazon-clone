@@ -24,13 +24,10 @@ app.post("/payments/create", async (request, response) => {
     amount: total, // subunits of the currency
     currency: "usd",
     description: 'Software development services',
-
-
   });
     //ok created
     response.status(201).send({
       clientSecret: paymentIntent.client_secret,
       });
-
 });
 exports.api=functions.https.onRequest(app)

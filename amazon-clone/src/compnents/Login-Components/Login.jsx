@@ -69,8 +69,10 @@ function Login() {
                 <h1>Sign-in</h1>
 
                 <form >
-                    {showUsername&&<> <h5>Username</h5>
-                    <input type='text' value={username}  onChange={e => setUsername(e.target.value)} /></>}
+                    {
+                      showUsername&&<> <h5>Username</h5>
+                    <input type='text' value={username}  onChange={e => setUsername(e.target.value)} /></>
+                    }
                     <h5>E-mail</h5>
                     <input type='text'  value={email} onChange={e => setEmail(e.target.value)}/>
 

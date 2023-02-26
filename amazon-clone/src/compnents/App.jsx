@@ -5,6 +5,7 @@ import Home from './Home-components/Home';
 import Checkout from './Checkout-Components/Checkout';
 import Login from './Login-Components/Login';
 import Payment from './Payment-Components/Payment';
+import Register from './Login-Components/Register/Register';
 import Orders from './Orders-Components/Orders';
 import{loadStripe} from "@stripe/stripe-js"
 import {Elements} from "@stripe/react-stripe-js"
@@ -46,7 +47,9 @@ function App() {
     
     <div className="app">
    <UnameProvider  >
+
       <Routes>
+      <Route path='/register' element={<><Register/></>} />
         <Route path='/login' element={<><Header /><Loginn/></>} />
         <Route path="/checkout" element={<><Header /><Checkout/></>}/>
         <Route path="/payment" element={<><Header /> <Elements stripe={promise}><Payment/> </Elements></>}/>

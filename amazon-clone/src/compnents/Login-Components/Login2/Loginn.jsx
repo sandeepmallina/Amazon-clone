@@ -1,39 +1,44 @@
-import React from 'react'
+import React,{useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import "../Login2/Loginn.css"
-
+import { Link } from 'react-router-dom'
+import { auth } from '../../../firebase';
 function Loginn() {
+  const history = useNavigate ();
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')  
+  const signIn = e =>{
+    e.preventDefault();
+    
+    auth.signInWithEmailAndPassword(email,password)
+    .then( auth =>{
+      history('/')
+    })
+    .catch(error => alert(error.message))
+  }
   return (
-    <div className='Login'>  
-        <div className='Login_container'>
-                <h1 className='login_header'>LOGIN</h1>
-                <form className='login_form'>
-                    <h2 className='title'>Email</h2>
-                    <input type='text' className='email'  />
-
-                    <h2 className='title'>Password</h2>
-                    <input type='password' className='password'  /><br />
-                    <button type='submit' className='Login_signInButton'>Login</button>
-                    <a href="#" className='forgrt_password'>Forgotten your password?</a>
-                </form>
-
-                {/* <p>
-                    By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please
-                    see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
-                </p> */}
-                
-          </div>
-          <div className='Register_Container'>
-          {/* <p>
-                    By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please
-                    see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
-                </p> */}
-                <h1 className='register_header'>REGISTER</h1>
-                <p className='about_register'>
-                Create an account to expedite future checkouts, view and update your account details,
-                 track your order status, and history.
-                </p>
-                <button   className="Register_Button">Register</button>
-          </div>
+    <div className='login'>  
+      <div className="login_left">
+          <form className='login_form'>
+          <h1 className='login_header'>Login</h1>
+            <input type='text' value={email} onChange={e => setEmail(e.target.value)} className='input_style' placeholder='Email' />
+            <input type='password' value={password} onChange={e => setPassword(e.target.value)}  className='input_style' placeholder='Password'  />
+            <br />
+            <button type='submit' className='login_btn'  onClick={signIn}>login</button>
+            <h5>forgot password?</h5>
+          </form>
+          
+      </div>
+      <div className="login_right">
+      <div className="register_form">
+        <h1 className='register_header'>Register</h1>
+        <p className='register_info'>Create an account to expedite future checkouts, view and update your account details, track your order status, and history.</p>
+        <Link to='/register'>
+        <button className='register_btn' >Register</button>
+        </Link>
+      </div>
+      </div>
+    
     </div>
   )
 }
